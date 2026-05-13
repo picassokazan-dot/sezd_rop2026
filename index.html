@@ -1344,6 +1344,147 @@
     margin-top: 4px;
   }
 
+
+  /* === ORG BLOCK CARD PREVIEW === */
+  .org-card-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .org-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.09);
+    font-size: 13px;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.72);
+  }
+  .org-line:first-child { border-top: 0; padding-top: 0; }
+  .org-line strong { color: #fff; font-weight: 700; }
+  .org-line span:last-child { text-align: right; color: rgba(255,255,255,0.9); }
+  .org-badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 4px;
+  }
+  .org-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.045);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    color: var(--card-color, var(--accent));
+    font-weight: 700;
+  }
+  .org-mini-title {
+    font-size: 12px;
+    line-height: 1.3;
+    color: rgba(255,255,255,0.52);
+    margin-bottom: 6px;
+  }
+  .org-flight {
+    padding: 11px 0;
+    border-top: 1px dashed rgba(255,255,255,0.13);
+  }
+  .org-flight:first-child { border-top: 0; padding-top: 0; }
+  .org-flight-name {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+  .org-flight-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 12px;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.68);
+  }
+  .org-flight-row strong { color: rgba(255,255,255,0.95); }
+  .org-muted { color: rgba(255,255,255,0.52); font-style: italic; }
+  .doc-card.org-card { min-height: 440px; padding: 38px 34px 34px; }
+  .doc-card.org-card .doc-desc { margin-bottom: 0; font-size: 15px; }
+  .doc-card.org-card .doc-cta { margin-top: auto; padding-top: 22px; }
+  @media (max-width: 1300px) {
+    .doc-card.org-card { min-height: auto; }
+  }
+  /* === CTA === */
+  .cta { padding: 200px 0 160px; position: relative; }
+  .cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 1000px 600px at 50% 50%, rgba(124, 58, 237, 0.25), transparent 60%);
+    pointer-events: none;
+  }
+  .cta-content { text-align: center; position: relative; }
+  .cta-overline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 32px;
+  }
+  .cta-headline {
+    font-size: clamp(64px, 9vw, 140px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    margin-bottom: 56px;
+  }
+  .cta-headline .gradient {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--pink) 50%, var(--amber) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: shine 4s ease-in-out infinite;
+  }
+  .cta-meta {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 28px 44px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+  .cta-meta strong { color: #fff; font-weight: 600; }
+
+  /* === FOOTER === */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: #050507;
+  }
+  .footer-content {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+  }
+
+  /* Планшеты — 2 колонки для документов */
+  @media (max-width: 1180px) {
+    .docs-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 900px) {`r`n    .org-flight-row { grid-template-columns: 1fr; }
+
   /* === CTA === */
   .cta { padding: 200px 0 160px; position: relative; }
   .cta::before {
@@ -1464,7 +1605,7 @@
   <div class="container">
     <div class="hero-top">
       <div class="brand-mark"><div class="brand-dot"></div>ПИКАССО · СЪЕЗД РОП 2026</div>
-      <div>25–30 МАЯ · КАЗАНЬ</div>
+      <div>25–29 МАЯ · КАЗАНЬ</div>
     </div>
 
     <div class="hero-main">
@@ -1492,7 +1633,7 @@
       </div>
       <div class="hero-meta-block reveal reveal-delay-4">
         <strong>Даты проведения</strong>
-        25–30 мая 2026
+        25–29 мая 2026
       </div>
     </div>
   </div>
@@ -1809,121 +1950,111 @@
 </section>
 
 
-<!-- DOCS LINKS -->
-<section class="docs">
+<section class="docs" id="org-block">
   <div class="container">
-    <div class="section-label reveal">05 · Материалы для согласования</div>
-    <p class="docs-intro reveal reveal-delay-1">Вся доказательная база.</p>
+    <div class="section-label reveal">05 · Орг.блок</div>
+    <p class="docs-intro reveal reveal-delay-1">Все ключевые вводные для проведения съезда.</p>
     <h2 class="docs-headline reveal reveal-delay-2">
-      Четыре документа,<br><span class="gradient">четыре открытых файла.</span>
+      Площадка, состав,<br><span class="gradient">билеты и проживание.</span>
     </h2>
 
     <div class="docs-grid">
-      <!-- DOC 1: СЗ Отдел Развития -->
-      <a class="doc-card purple reveal reveal-delay-1" href="https://docs.google.com/document/d/1bHC7DLAkbF1LvYOMHFnikPsbQ6dWK8-Zl8G0Cdn5cls/edit?tab=t.0" target="_blank" rel="noopener">
+      <div class="doc-card purple org-card reveal reveal-delay-1">
         <div class="doc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
+            <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
           </svg>
         </div>
-        <div class="doc-tag">СЗ · Документ 1</div>
-        <div class="doc-title">Мотивация Отдела Развития 2026</div>
-        <div class="doc-desc">Коэффициентная модель KPI, категории регионов А/Б, прирост фонда +541&nbsp;750&nbsp;₽.</div>
-        <div class="doc-cta">
-          Открой меня
-          <span class="doc-arrow">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </span>
+        <div class="doc-tag">01 · Площадка</div>
+        <div class="doc-title">Казань · ЦФД</div>
+        <div class="doc-desc">Центр функциональной диагностики<br>ул. Сибгата Хакима, 44</div>
+        <div class="org-badge-row">
+          <span class="org-badge">25–29 мая</span>
+          <span class="org-badge">09:00–18:00</span>
         </div>
-      </a>
+        <div class="org-card-list">
+          <div class="org-line"><strong>24 мая</strong><span>заезд</span></div>
+          <div class="org-line"><strong>25–29 мая</strong><span>очная программа</span></div>
+          <div class="org-line"><strong>30 мая</strong><span>выезд</span></div>
+        </div>
+        <div class="doc-cta">5 рабочих дней <span class="doc-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </div>
 
-      <!-- DOC 2: СЗ РОП -->
-      <a class="doc-card pink reveal reveal-delay-2" href="https://docs.google.com/document/d/1i5BvXUda58xjangcFfYiZv2IZeJghr8GbdIQJVMxH64/edit?tab=t.0" target="_blank" rel="noopener">
+      <div class="doc-card pink org-card reveal reveal-delay-2">
         <div class="doc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
         </div>
-        <div class="doc-tag">СЗ · Документ 2</div>
-        <div class="doc-title">Мотивация РОП на&nbsp;2026 год</div>
-        <div class="doc-desc">Привязка к&nbsp;ОП и&nbsp;ПП. Прирост ЗП трёх РОП — <strong>+93&nbsp;526&nbsp;₽ (+30,40%).</strong></div>
-        <div class="doc-cta">
-          Открой меня
-          <span class="doc-arrow">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </span>
+        <div class="doc-tag">02 · Состав</div>
+        <div class="doc-title">2 организатора<br>3 участника</div>
+        <div class="org-card-list">
+          <div class="org-line"><strong>Федеральные директора</strong><span>Годнеева В.О.<br>Сергеенко П.В.</span></div>
+          <div class="org-line"><strong>Руководители отдела продаж</strong><span>Огнева А.В.<br>Шокин И.А.<br>Переверзев А.О.</span></div>
         </div>
-      </a>
+        <div class="org-badge-row">
+          <span class="org-badge">5 человек</span>
+          <span class="org-badge">2 роли</span>
+        </div>
+        <div class="doc-cta">Команда съезда <span class="doc-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </div>
 
-      <!-- DOC 3: Смета -->
-      <a class="doc-card cyan reveal reveal-delay-3" href="https://docs.google.com/document/d/1-ECXakWJBa-FtCLxRfwAZJyojv72hSbSNaZyfOZd0-E/edit?usp=drive_link" target="_blank" rel="noopener">
+      <div class="doc-card cyan org-card reveal reveal-delay-3">
         <div class="doc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="3" width="16" height="18" rx="2"/>
-            <line x1="8" y1="7" x2="16" y2="7"/>
-            <line x1="8" y1="11" x2="14" y2="11"/>
-            <line x1="8" y1="15" x2="12" y2="15"/>
-            <circle cx="16.5" cy="16.5" r="2.5" fill="#06b6d4" opacity="0.3"/>
-            <text x="16.5" y="18" text-anchor="middle" font-family="JetBrains Mono" font-size="4" font-weight="700" fill="#06b6d4">₽</text>
+            <path d="M2 16l20-5-20-5 5 5-5 5z"/>
+            <path d="M7 11h10"/>
           </svg>
         </div>
-        <div class="doc-tag">СЗ · Документ 3</div>
-        <div class="doc-title">Командировочные расходы · смета</div>
-        <div class="doc-desc">Казань · 25—30&nbsp;мая 2026 · 3 командировочных. Итог: <strong>182&nbsp;800&nbsp;₽.</strong></div>
-        <div class="doc-cta">
-          Открой меня
-          <span class="doc-arrow">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </span>
+        <div class="doc-tag">03 · Билеты</div>
+        <div class="doc-title">Маршруты участников</div>
+        <div class="doc-desc">Подтвержденные перелеты и позиции, которые еще требуют уточнения.</div>
+        <div class="org-flight">
+          <div class="org-flight-name">Сергеенко Павел · Краснодар</div>
+          <div class="org-flight-row"><span><strong>24.05</strong> 16:45 Краснодар → 20:30 Казань</span><span><strong>30.05</strong> 12:50 Казань → 16:30 Краснодар</span></div>
         </div>
-      </a>
+        <div class="org-flight">
+          <div class="org-flight-name">Переверзев Алексей · Краснодар</div>
+          <div class="org-flight-row"><span><strong>24.05</strong> 16:45 Краснодар → 20:30 Казань</span><span><strong>30.05</strong> 12:50 Казань → 16:30 Краснодар</span></div>
+        </div>
+        <div class="org-flight">
+          <div class="org-flight-name">Шокин Илья · Нижний Новгород</div>
+          <div class="org-flight-row"><span><strong>24.05</strong> 23:10 Н. Новгород → 00:05 Казань</span><span><strong>30.05</strong> 23:18 Казань → 07:46 Н. Новгород · поезд</span></div>
+        </div>
+        <div class="doc-cta">Логистика <span class="doc-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </div>
 
-      <!-- DOC 4: Программа обучения -->
-      <a class="doc-card amber reveal reveal-delay-4" href="https://picassokazan-dot.github.io/rop-2026/" target="_blank" rel="noopener" style="position:relative;">
+      <div class="doc-card amber org-card reveal reveal-delay-4" style="position:relative;">
         <div class="open-me" style="top:-72px;right:24px;">
-          <div class="open-me-text">программа здесь&nbsp;👇</div>
+          <div class="open-me-text">орг.часть здесь&nbsp;👇</div>
           <svg class="open-me-arrow" width="80" height="56" viewBox="0 0 80 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-left:auto;display:block;">
             <path d="M8 4 C 30 8, 50 22, 56 48" stroke-dasharray="3 4"/>
             <polyline points="48,40 56,48 60,38"/>
           </svg>
         </div>
-
         <div class="doc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            <path d="M3 21h18"/>
+            <path d="M5 21V7l8-4v18"/>
+            <path d="M19 21V11l-6-4"/>
+            <path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/>
           </svg>
         </div>
-        <div class="doc-tag">Программа · Документ 4</div>
-        <div class="doc-title">5 дней программы + материалы</div>
-        <div class="doc-desc">Учебный портал. Презентации, кейсы, ДЗ. Доступ по&nbsp;паролю.</div>
-        <div class="doc-cta">
-          Открой меня
-          <span class="doc-arrow">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </span>
+        <div class="doc-tag">04 · Проживание</div>
+        <div class="doc-title">Статус размещения</div>
+        <div class="doc-desc">Размещение приезжающих участников закреплено по двум адресам рядом с рабочей площадкой.</div>
+        <div class="org-card-list">
+          <div class="org-line"><strong>Сергеенко Павел</strong><span>ул. Алексея Козина, 2</span></div>
+          <div class="org-line"><strong>Переверзев Алексей</strong><span>ул. Чистопольская, 34</span></div>
+          <div class="org-line"><strong>Шокин Илья</strong><span>ул. Чистопольская, 34</span></div>
+          <div class="org-line"><strong>Годнеева и Огнева</strong><span>Казань</span></div>
         </div>
-      </a>
+        <div class="doc-cta">Контроль размещения <span class="doc-arrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1939,7 +2070,7 @@
       </h2>
       <div class="cta-meta reveal reveal-delay-3">
         <div>Программа собрана. Площадка готова. Экономика просчитана.</div>
-        <div><strong>Даты съезда — 25–30 мая 2026.</strong></div>
+        <div><strong>Даты съезда — 25–29 мая 2026.</strong></div>
       </div>
     </div>
   </div>
@@ -1949,7 +2080,7 @@
   <div class="container">
     <div class="footer-content">
       <div>ПИКАССО · 2026</div>
-      <div>СЪЕЗД РОП · КАЗАНЬ · 25–30 МАЯ 2026</div>
+      <div>СЪЕЗД РОП · КАЗАНЬ · 25–29 МАЯ 2026</div>
     </div>
   </div>
 </footer>
